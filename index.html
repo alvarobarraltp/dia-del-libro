@@ -7,8 +7,11 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #fdf6e3; color: #333; }
     h1, h2, h3 { color: #2e7d32; }
-    section { padding: 20px; border-bottom: 1px solid #ccc; display: none; }
-    section.active { display: block; }
+    section {
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+      display: block;
+    }
     .nav-buttons { text-align: center; margin: 20px; }
     button {
       padding: 16px 32px;
@@ -46,14 +49,14 @@
   <button onclick="showSection(4)">Evaluación</button>
   <button onclick="showSection(5)">Premiación</button>
 </div>
-<!-- SECCIONES DESDE EL CANVAS INCLUIDAS AQUÍ -->
+
+<!-- Las secciones están visibles por defecto -->
+
 <script>
-  // Activar la sección inicial automáticamente
-  const sections = document.querySelectorAll('section');
   function showSection(index) {
-    sections.forEach((s, i) => s.classList.toggle('active', i === index));
+    const sections = document.querySelectorAll('section');
+    sections.forEach((s, i) => s.style.display = i === index ? 'block' : 'none');
   }
-  showSection(0);
 </script>
 
 </body>
